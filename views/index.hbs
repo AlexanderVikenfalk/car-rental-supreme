@@ -1,0 +1,50 @@
+<div id="splash">
+<div class="search-car">
+            <form method='GET' action='/searchorder'>
+                <fieldset>
+                    <legend><span class="number">1</span> Boka bil</legend>
+                    <label for="brand">Märke</label>
+                    <select id="brand" name="brand">
+                <option value="SAAB">SAAB</option>
+                <option value="Volvo">Volvo</option>
+                <option value="BMW">BMW</option>
+                <option value="Volkswagen">Volkswagen</option>
+                <option value="Toyota">Toyota</option>
+                    </select>
+                {{!--Ska variera beroende av märke--}}
+                <label for="model">Model</label>
+                <select id="model" name="model">
+                <option value="S4">S4</option>
+                <option value="240">240</option>
+                <option value="Test">Test</option>
+                <option value="Test">Test</option>
+                <option value="Toyota">Test</option>
+                </select>
+                    <label for="seats">Storlek</label>
+                <select id="seats" name="seats">
+                <option value="2">2 platser</option>
+                <option value="5">5 platser</option>
+                <option value="7">7 platser</option>
+                </select>
+                  <label for="tranmission">Växelsystem</label>
+                <select id="transmisson" name="transmisson">
+                <option value="automatic">Automatic</option>
+                <option value="manuell">Manuell</option>
+                </select>
+                  <label for="roofrack">Takräcke?</label>
+                <select id="roofrack" name="roofrack">
+                <option value="true">Ja</option>
+                <option value="false">Nej</option>
+                </select>
+                {{!--<label for="roorack">Takräcke?</label>                    
+                    <input type="radio" name="roofrack" value="true"> Ja
+                    <input type="radio" name="roofrack" value="false"> Nej  --}}
+                <label for="dateFrom" > Hyra från </label>
+                <input type="text" class="datepicker" class="date" name="dateTo"  placeholder="Till">                     
+                <input type="text" class="datepicker right" class="date" name="dateFrom"  placeholder="Från">   
+                </fieldset>                  
+                <input type="submit" value="Beställ" " />
+            </form>
+        </div>
+    </div>
+

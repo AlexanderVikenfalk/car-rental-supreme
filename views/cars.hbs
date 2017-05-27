@@ -1,0 +1,34 @@
+<div class = "container">
+  <div class = "sort">
+    <div class = "filters">
+    <form action="/sortonpriceasc" method="get">
+      Sort
+      <button type='submit'> Asc </button> 
+    </form>
+    <form action="/sortonpricedesc" method="get"> 
+    Sort
+      <button type='submit'> Desc </button> 
+    </form>
+    <form action="/filtertransmission" method="get" id="transmissionForm">
+    <label for="transmission">Växelsystem</label> 
+    <input type="radio" name="trans" value="manual" />No<br>
+    <input type="radio" name="trans" value="automatic"/>Yes<br>
+    <input type="radio" name="trans" value="" checked="checked"/>Both<br> 
+  
+    {{!--<button type='submit'> Transmission </button> --}}
+    </form>
+    {{#if cars}}
+  <ul class="carList">
+    {{#each cars}}
+    <li class = "carObject">
+      {{brand}}, - {{model}}.
+      Växellåda: {{transmission}},
+      Säten: {{seats}},
+      Takräcke: {{#if roofbox}}Ja{{else}}Nej{{/if}},
+      {{price}}:-/dag
+    </li>
+    {{/each}}
+  </ul>
+  {{/if}}
+  </div>
+</div>

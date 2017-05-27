@@ -1,0 +1,19 @@
+{
+    "name": "car-rental-supreme",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "start": "nodemon app.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Alexander Vikenfalk",
+    "license": "",
+    "dependencies": {
+        "body-parser": "^1.17.1",
+        "express-handlebars": "^3.0.0",
+        "express-session": "^1.15.2",
+        "mongoose": "^4.9.8",
+        "hbs": "^4.0.1"
+    }
+}
