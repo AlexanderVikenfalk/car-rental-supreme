@@ -3,7 +3,7 @@ html {
     width: 100%;
     height: 100%;
     margin: 0 auto;
-    background-color: #738F9B;
+    background-color: #EDEDED;
 }
 
 #splash {
@@ -29,14 +29,12 @@ nav {
 }
 
 ul.nav {
-    /*display: inline-block;*/
     margin: 0;
     padding: 0;
     list-style: none;
     height: 50px;
     line-height: 50px;
     background: #1abc9c;
-    /* you can change the backgorund color here. */
     font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
     border-radius: 8px;
@@ -62,42 +60,42 @@ ul.nav li.current a {
 
 /*Form*/
 
-.search-car {
+.styled-form {
     max-width: 500px;
     padding: 10px 20px;
     background: #f4f7f8;
     margin-left: 15%;
-    margin-top: 6%;
+    margin-top: 8%;
     padding: 20px;
     border-radius: 8px;
     border: 1px solid darkgray;
     font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-.search-car fieldset {
+.styled-form fieldset {
     border: none;
 }
 
-.search-car legend {
+.styled-form legend {
     font-size: 1.4em;
     margin-bottom: 10px;
 }
 
-.search-car label {
+.styled-form label {
     display: block;
     margin-bottom: 8px;
 }
 
-.search-car input[type="text"],
-.search-car input[type="date"],
-.search-car input[type="datetime"],
-.search-car input[type="email"],
-.search-car input[type="number"],
-.search-car input[type="search"],
-.search-car input[type="time"],
-.search-car input[type="url"],
-.search-car textarea,
-.search-car select {
+.styled-form input[type="text"],
+.styled-form input[type="date"],
+.styled-form input[type="datetime"],
+.styled-form input[type="email"],
+.styled-form input[type="number"],
+.styled-form input[type="search"],
+.styled-form input[type="time"],
+.styled-form input[type="url"],
+.styled-form textarea,
+.styled-form select {
     font-family: Georgia, "Times New Roman", Times, serif;
     background: rgba(255, 255, 255, .1);
     border: none;
@@ -117,25 +115,25 @@ ul.nav li.current a {
     margin-bottom: 30px;
 }
 
-.search-car input[type="text"]:focus,
-.search-car input[type="date"]:focus,
-.search-car input[type="datetime"]:focus,
-.search-car input[type="email"]:focus,
-.search-car input[type="number"]:focus,
-.search-car input[type="search"]:focus,
-.search-car input[type="time"]:focus,
-.search-car input[type="url"]:focus,
-.search-car textarea:focus,
-.search-car select:focus {
+.styled-form input[type="text"]:focus,
+.styled-form input[type="date"]:focus,
+.styled-form input[type="datetime"]:focus,
+.styled-form input[type="email"]:focus,
+.styled-form input[type="number"]:focus,
+.styled-form input[type="search"]:focus,
+.styled-form input[type="time"]:focus,
+.styled-form input[type="url"]:focus,
+.styled-form textarea:focus,
+.styled-form select:focus {
     background: #d2d9dd;
 }
 
-.search-car select {
+.styled-form select {
     -webkit-appearance: menulist-button;
     height: 35px;
 }
 
-.search-car .number {
+.styled-form .number {
     background: #1abc9c;
     color: #fff;
     height: 30px;
@@ -149,8 +147,9 @@ ul.nav li.current a {
     border-radius: 15px 15px 15px 0px;
 }
 
-.search-car input[type="submit"],
-.search-car input[type="button"] {
+.styled-form input[type="submit"],
+.styled-form input[type="button"],
+.standard-button {
     position: relative;
     display: block;
     padding: 19px 39px 18px 39px;
@@ -166,8 +165,8 @@ ul.nav li.current a {
     margin-bottom: 10px;
 }
 
-.search-car input[type="submit"]:hover,
-.search-car input[type="button"]:hover {
+.styled-form input[type="submit"]:hover,
+.styled-form input[type="button"]:hover {
     background: #109177;
 }
 
@@ -179,28 +178,119 @@ ul.nav li.current a {
 /*Cars*/
 
 .container {
-    background-color: lightgray;
-    margin: 0 20%;
+    background-color: #FFFFFF;
+    margin: 5% 20%;
     width: 60%;
     height: 100%;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 25px;
 }
 
 .carList {
     list-style-type: none;
-    text-align: center;
+    /*text-align: center;*/
 }
 
 .carObject {
     display: inline-block;
-    background: beige;
+    background: #EFEFEF;
     color: black;
     margin: 2rem 1rem 2rem 0;
     font-size: 20px;
+    width: 15rem;
+    height: 100%;
+    border: 1px solid black;
+}
+
+
+/*Success-page*/
+
+.successs {
+    text-align: center;
+}
+
+.long-container {
+    background-color: #FFFFFF;
+    margin: 5% 20%;
+    width: 60%;
+    /*height: 100%;*/
+    overflow: hidden;
+    text-align: center;
+    border-radius: 25px;
+    display: inline-block;
+    -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+    -moz-box-shadow: 3px 3px 5px 6px #ccc;
+    box-shadow: 3px 3px 5px 6px #ccc;
 }
 
 
 /*Filters*/
 
-.filters {
-    margin-top: 5%;
+.filter-nav {
+    padding: 1rem 0;
+    border-bottom: 2px solid darkgray !important;
+    font-size: 150%;
+    color: black;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    /*background: rgba(255, 255, 255, .1);*/
+    border: none;
+    border-radius: 4px;
+    font-size: 20px;
+    margin: 0;
+    outline: 0;
+    padding: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    background-color: #e8eeef;
+    color: black;
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+}
+
+.filter-nav select {
+    color: black;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    background: white;
+    font-size: 20px;
+}
+
+.filter-button {
+    width: 20%;
+    color: #FFF;
+    margin: 0 auto;
+    background: #1abc9c;
+    font-size: 20px;
+    text-align: center;
+    font-style: normal;
+    border: 1px solid #16a085;
+}
+
+
+/*DeleteOrder*/
+
+.delete-button {
+    position: relative;
+    display: block;
+    padding: 19px 39px 18px 39px;
+    color: #FFF;
+    margin: 0 auto;
+    background-color: #BC1A3A !important;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    width: 100%;
+    border: 1px solid #700f22 !important;
+    border-width: 1px 1px 3px;
+    margin-bottom: 10px;
+}
+
+.warning {
+    color: red
+}
+
+.success {
+    color: green;
 }

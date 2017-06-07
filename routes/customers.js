@@ -1,6 +1,5 @@
-const Customers = require('../schemas/customers');
-const connection = require('../dbconnection')(require('mongoose'));
-
 module.exports = (app) => {
-
+    app.post('/signup', (req, res) => {
+        res.render('signup', { carid: req.body.carid });
+    });
 };

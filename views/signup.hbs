@@ -1,0 +1,24 @@
+<div class="styled-form">
+            <form method='POST' action='/createorder'>
+                <fieldset>
+                    <legend><span class="number">2</span> Skapa Kund</legend>
+                    <label for="forename">Förnamn</label>
+                    <input type="text" name="forename" required ><br>
+
+                    <label for="surname">Efternamn</label>
+                    <input type="text" name="surname" required ><br>
+
+                    <label for="ssn">Personnumer</label>
+                    <input type="text" name="ssn" required ><br>
+
+                    <label for="phonenumber">Telefonnummer</label>
+                    <input type="text" name="phonenumber"  ><br>
+
+                    <label for="emailaddress">Epostadress</label>
+                    <input type="text" name="emailadress"  ><br>
+                    <input type="text" name="carid"  hidden readonly value={{carid}} > <br>
+                </fieldset>                  
+                <input type="submit" value="Boka"  />
+            </form>
+        </div>
+    </div>

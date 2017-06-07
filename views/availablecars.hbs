@@ -1,0 +1,24 @@
+
+<div class = "long-container">
+<h1>Tillgängliga bilar</h1>
+
+ {{#if availablecars}}
+  <ul class="carList">
+    {{#each availablecars}}
+    <li class = "carObject">
+        <form method='POST' action='/signup'>
+          <br>
+          <b>{{brand}}<input type="text" name="brand" hidden readonly value={{brand}} > - </b>
+          <b> {{model}} <input type="text" name="model" hidden readonly value={{model}} ></b><br>          
+          <b> {{#if automat}}Automat{{else}}Manuell{{/if}}<input type="text" name="automat" hidden readonly value={{automat}} ></b><br>          
+          <b> {{seats}}<input type="text" name="seats" hidden readonly value={{seats}} > platser</b><br>          
+          <b> {{#if roofrack}}Takräcke{{else}}Inget takräcke{{/if}}<input type="text" name="roofrack" hidden readonly value={{roofrack}} ></b><br>
+          <b> {{price}}<input type="text" name="price" hidden readonly value={{price}} > :- per dag</b><br>       
+          <input type="text" name="carid" hidden readonly value={{_id}} > <br>
+          <input type="submit" value="Boka Bil" class="standard-button" />           
+        </form>
+    </li>
+    {{/each}}
+  </ul>
+  {{/if}}
+</div>  

@@ -1,34 +1,43 @@
-<div class = "container">
-  <div class = "sort">
-    <div class = "filters">
-    <form action="/sortonpriceasc" method="get">
-      Sort
-      <button type='submit'> Asc </button> 
-    </form>
-    <form action="/sortonpricedesc" method="get"> 
-    Sort
-      <button type='submit'> Desc </button> 
-    </form>
-    <form action="/filtertransmission" method="get" id="transmissionForm">
-    <label for="transmission">Växelsystem</label> 
-    <input type="radio" name="trans" value="manual" />No<br>
-    <input type="radio" name="trans" value="automatic"/>Yes<br>
-    <input type="radio" name="trans" value="" checked="checked"/>Both<br> 
+
+<div class = "long-container">
+  <div class = "filter-nav">
+  <form action="/filters" method="get">
+          Sortera pris
+   <select name="price" >
+                <option value="asc">Lägst pris först</option>
+                <option value="desc">Högst pris först</option>
+        </select>
+        Växelsystem
+        <select name="transmisson" >
+                <option value="true">Automatisk</option>
+                <option value="false">Manuell</option>
+        </select>
+        Takräcke
+        <select name="roofrack" >
+                <option value="true">Ja</option>
+                <option value="false">Nej</option>
+        </select>
+          <button class = "filter-button" type='submit'> Filtrera </button> 
+          
+  </form>
+  </div>
   
-    {{!--<button type='submit'> Transmission </button> --}}
-    </form>
     {{#if cars}}
   <ul class="carList">
     {{#each cars}}
     <li class = "carObject">
-      {{brand}}, - {{model}}.
-      Växellåda: {{transmission}},
-      Säten: {{seats}},
-      Takräcke: {{#if roofbox}}Ja{{else}}Nej{{/if}},
-      {{price}}:-/dag
+      
+     <br>
+          <b>{{brand}}<input type="text" name="brand" hidden readonly value={{brand}} > - </b>
+          <b> {{model}} <input type="text" name="model" hidden readonly value={{model}} ></b><br>          
+          <b> {{#if automat}}Automat{{else}}Manuell{{/if}}<input type="text" name="automat" hidden readonly value={{automat}} ></b><br>          
+          <b> {{seats}}<input type="text" name="seats" hidden readonly value={{seats}} > platser</b><br>          
+          <b> {{#if roofrack}}Takräcke{{else}}Inget takräcke{{/if}}<input type="text" name="roofrack" hidden readonly value={{roofrack}} ></b><br>
+          <b> {{price}}<input type="text" name="price" hidden readonly value={{price}} > :- per dag</b><br> 
+          <br>      
     </li>
     {{/each}}
   </ul>
   {{/if}}
-  </div>
+
 </div>

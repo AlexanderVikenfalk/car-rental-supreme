@@ -1,0 +1,15 @@
+<div class = "container">
+    <div class="styled-form">
+    <form action="/deleteorder" method="get">
+       
+      <label for="deleteorder">Avboka Order</label>
+      <input type="text" name="id" required placeholder="orderid "  >
+       <input type="submit" value="Avboka" class="delete-button"   />
+    </form>
+  {{#if success}}
+    <p class="success">{{success}}</p>
+  {{else if notfound}}
+    <p class="warning"> Ordern ej funnen </p>
+  {{/if}}
+    </div>
+</div>

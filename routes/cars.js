@@ -1,28 +1,29 @@
 const Car = require('../schemas/carschema');
-const connection = require('../dbconnection')(require('mongoose'));
 
+// Returns all cars and renders them
 module.exports = (app) => {
     app.get('/cars', (req, res) => {
-        let car = new Car();
-        car.all((error, cars) => {
+        Car.find({}, (error, cars) => {
+            if (error) res.send(error);
             res.render('cars', { cars: cars });
         });
     });
 
+    // Manually create car
     app.post('/createcar', (req, res) => {
         const car = new Car({
             brand: req.body.brand,
             model: req.body.model,
             seats: req.body.seats,
-            transmission: req.body.transmission,
-            roofbox: req.body.roofbox,
+            automat: req.body.automat,
+            roofrack: req.body.roofrack,
             price: req.body.price
         });
         car.save(error => {
-            if (error) console.log(error)
+            if (error) res.send(error)
             else {
                 car.save();
-                res.send("Done");
+                res.json({ message: "Car successfully added!", car });
             };
         });
 
@@ -34,46 +35,45 @@ module.exports = (app) => {
                 brand: req.body.brand,
                 model: req.body.model,
                 seats: req.body.seats,
-                transmission: req.body.transmission,
-                roofbox: req.body.roofbox,
+                automat: req.body.automat,
+                roofrack: req.body.roofbox,
                 price: req.body.price
             },
-            (error, result) => {
+            (error, car) => {
                 if (error) res.send(error);
-                res.send(result);
+                else {
+                    res.json({ message: "Car updated!", car });
+                }
             });
     });
 
-    //SortOnPrice Asc
-    app.get('/sortonpriceasc', (req, res) => {
+
+    // Delete Car
+    app.delete('/deletecar/:id', (req, res) => {
+        Car.remove({ _id: req.params.id }, (err, result) => {
+            if (err) res.send(error);
+            else {
+                res.json({ message: "Car deleted!", result });
+            }
+        });
+    });
+
+    //SORT FUNCTIONS
+
+
+    //Filters car based on "price", "roofrack" and "transmission"
+    app.get('/filters', (req, res) => {
         Car.find()
-            .sort({ price: 'asc' })
+            .where('roofrack', req.query.roofrack)
+            .where('automat', req.query.transmisson)
+            .sort({ price: req.query.price })
             .exec((error, Car) => {
-                res.render('cars', { cars: Car });
-
-            });
-    });
-
-    //SortOnPrice Desc
-    app.get('/sortonpricedesc', (req, res) => {
-        Car.find()
-            .sort({ price: 'desc' })
-            .exec((error, Car) => {
-                // console.log("DESC" + Car);
-                // let car = new Car();
+                if (error) res.send(error)
+                console.log(Car);
                 res.render('cars', { cars: Car });
             });
     });
 
-    //SFilter transmission type
-    app.get('/filtertransmission', (req, res) => {
-        Car.find()
-            // Funkar ej
-            .where('transmission').equals(req.url.trans)
-            .exec((Car) => {
-                res.render('cars', { cars: Car });
-            });
-    });
 
 
 };

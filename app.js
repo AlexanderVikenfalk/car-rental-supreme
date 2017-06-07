@@ -4,10 +4,15 @@ http = require('http');
 bodyParser = require('body-parser');
 express = require('express');
 session = require('express-session');
+mongoose = require('mongoose');
+connection = require('./dbconnection')(require('mongoose'));
 
 // express instance
-const app = express();
-const server = http.createServer(app);
+app = express();
+server = http.createServer(app);
+
+// importing promises
+mongoose.Promise = global.Promise;
 
 // sessions handling
 app.use(session({
@@ -39,11 +44,16 @@ app.engine('hbs', hbs({
 // Routes 
 require('./routes/index')(app);
 require('./routes/cars')(app);
-// require('./backend/customer')(app);
+require('./routes/customers')(app);
 require('./routes/orders')(app);
+require('./routes/deleteorder')(app);
 
 
 // start server
 server.listen(port, () => {
-    console.log('Listening at localhost/');
+    console.log('Listening at localhost/' + port);
+
 });
+
+//making sure tests can be done via app.js
+module.exports = app;
