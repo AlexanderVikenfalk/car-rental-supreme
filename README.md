@@ -19,13 +19,13 @@ This project was made as a school project. It had to fullfill the following requ
 * **CSS 3** for design.
 * **Handlebars** for layout.
 * **JS/ Jquery** for effects and functionality.
-* ** Mongoose** for storing persistent data.
-* ** Mocha and Chai** for testing.
+* **Mongoose** for storing persistent data.
+* **Mocha and Chai** for testing.
 
 #### How to use this service ####
-1. - Download/ clone the repository
-2. - Go to the diretory of the app and type in "npm install" via a task runner (node must be installed).
-3. - Open your web browser and navigate to localhost:3000.
+1.  Download/ clone the repository
+2.  Go to the diretory of the app and type in "npm install" via a task runner (node must be installed).
+3.  Open your web browser and navigate to localhost:3000.
 
 Start using the app by entering a date to rent from, and a date to rent to.
 
